@@ -16,77 +16,74 @@ st.markdown(
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
     html, body, [data-testid="stAppViewContainer"] {
-        background-color: #0D1117 !important;
-        color: #E6EDF3;
+        background-color: #0B0D12 !important;
+        color: #E2E8F0;
         font-family: 'Space Grotesk', sans-serif;
     }
 
-    /* hide default streamlit chrome */
     #MainMenu, footer, header { visibility: hidden; }
     [data-testid="stToolbar"] { display: none; }
-    .block-container { padding-top: 2rem; padding-bottom: 4rem; max-width: 640px; }
+    .block-container { padding-top: 2rem; padding-bottom: 4rem; max-width: 620px; }
 
-    /* ── Typography ── */
-    h1 { font-family: 'Space Mono', monospace; letter-spacing: -1px; }
+    h1, h2, h3 { font-family: 'Space Mono', monospace; }
 
     /* ── Cards ── */
     .glass-card {
-        background: rgba(31, 41, 55, 0.7);
-        border: 1px solid rgba(139, 92, 246, 0.25);
+        background: #141924;
+        border: 1px solid #1E2433;
         border-radius: 16px;
-        padding: 2rem;
+        padding: 1.75rem 1.5rem;
         text-align: center;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        margin: 1rem 0;
+        margin: 0.75rem 0;
     }
 
     .word-reveal {
-        background: linear-gradient(135deg, rgba(139,92,246,0.18) 0%, rgba(31,41,55,0.85) 100%);
-        border: 1.5px solid rgba(139, 92, 246, 0.5);
-        border-radius: 20px;
-        padding: 2.5rem 2rem;
+        background: #141924;
+        border: 1px solid #2A1F5E;
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
         text-align: center;
-        margin: 1rem 0;
+        margin: 0.75rem 0;
     }
 
     .word-big {
         font-family: 'Space Mono', monospace;
-        font-size: 2.8rem;
+        font-size: 2.6rem;
         font-weight: 700;
-        color: #A78BFA;
-        letter-spacing: 3px;
+        color: #8B6FFF;
+        letter-spacing: 4px;
         text-transform: uppercase;
         margin: 0.5rem 0;
     }
 
     .label-sm {
-        font-size: 0.75rem;
-        letter-spacing: 3px;
+        font-size: 0.68rem;
+        letter-spacing: 2.5px;
         text-transform: uppercase;
-        color: #6B7280;
+        color: #3D4761;
         font-family: 'Space Mono', monospace;
     }
 
     .player-waiting {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 600;
-        color: #E6EDF3;
+        color: #E2E8F0;
         margin-bottom: 0.25rem;
     }
 
     .tap-hint {
-        color: #6B7280;
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
+        color: #4B5B78;
+        font-size: 0.88rem;
+        margin-top: 0.4rem;
+        line-height: 1.6;
     }
 
     .winner-title {
         font-family: 'Space Mono', monospace;
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: 700;
         letter-spacing: 2px;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.4rem;
     }
 
     .civilian-win { color: #34D399; }
@@ -95,71 +92,79 @@ st.markdown(
     .reveal-pair {
         display: flex;
         justify-content: center;
-        gap: 2rem;
-        margin: 1.2rem 0;
+        gap: 1.5rem;
+        margin: 1rem 0;
+        flex-wrap: wrap;
     }
 
     .word-chip {
-        background: rgba(139,92,246,0.15);
-        border: 1px solid rgba(139,92,246,0.4);
+        background: #1A1330;
+        border: 1px solid #2A1F5E;
         border-radius: 10px;
-        padding: 0.5rem 1.2rem;
+        padding: 0.45rem 1rem;
         font-family: 'Space Mono', monospace;
-        font-size: 1.1rem;
-        color: #A78BFA;
+        font-size: 1rem;
+        color: #8B6FFF;
         letter-spacing: 1px;
     }
 
     .divider {
         border: none;
-        border-top: 1px solid rgba(139,92,246,0.2);
-        margin: 1.5rem 0;
+        border-top: 1px solid #1A1F2E;
+        margin: 1.25rem 0;
     }
 
-    /* ── Streamlit widget overrides ── */
+    /* ── Inputs ── */
     div[data-testid="stTextInput"] input {
-        background: rgba(31,41,55,0.8) !important;
-        border: 1px solid rgba(139,92,246,0.3) !important;
+        background: #161B27 !important;
+        border: 1px solid #1E2433 !important;
         border-radius: 10px !important;
-        color: #E6EDF3 !important;
+        color: #E2E8F0 !important;
         font-family: 'Space Grotesk', sans-serif !important;
     }
 
     div[data-testid="stTextInput"] input:focus {
-        border-color: #8B5CF6 !important;
-        box-shadow: 0 0 0 2px rgba(139,92,246,0.25) !important;
+        border-color: #6D4AFF !important;
+        box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.15) !important;
     }
 
     div[data-testid="stRadio"] label {
-        color: #E6EDF3 !important;
+        color: #C4CCDE !important;
         font-size: 1rem !important;
     }
 
-    /* Primary button */
+    /* ── Buttons ── */
     .stButton > button {
         width: 100%;
-        background: linear-gradient(135deg, #7C3AED, #8B5CF6) !important;
+        background: #6D4AFF !important;
         color: white !important;
         border: none !important;
         border-radius: 12px !important;
-        padding: 0.7rem 1.5rem !important;
+        padding: 0.65rem 1.5rem !important;
         font-family: 'Space Grotesk', sans-serif !important;
         font-weight: 600 !important;
-        font-size: 1rem !important;
-        letter-spacing: 0.5px !important;
-        transition: opacity 0.15s !important;
-        cursor: pointer !important;
+        font-size: 0.95rem !important;
+        letter-spacing: 0.3px !important;
+        transition: opacity 0.12s, transform 0.1s !important;
     }
-    .stButton > button:hover { opacity: 0.88 !important; }
 
-    /* Secondary / ghost button via key suffix trick — use st.button with type="secondary" */
+    .stButton > button:hover {
+        opacity: 0.85 !important;
+        transform: translateY(-1px) !important;
+    }
+
+    .stButton > button:active {
+        transform: translateY(0) !important;
+    }
+
     [data-testid="baseButton-secondary"] {
         background: transparent !important;
-        border: 1px solid rgba(139,92,246,0.4) !important;
-        color: #A78BFA !important;
+        border: 1px solid #2A1F5E !important;
+        color: #8B6FFF !important;
     }
+
     [data-testid="baseButton-secondary"]:hover {
-        background: rgba(139,92,246,0.1) !important;
+        background: #1A1330 !important;
     }
 
     .stAlert { border-radius: 12px !important; }
